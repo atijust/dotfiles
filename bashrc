@@ -18,6 +18,7 @@ export MANPATH="$(brew --prefix gnu-sed)/libexec/gnuman:$MANPATH"
 umask 0022
 
 export EDITOR=vim
+export PAGER=less
 
 alias vi='vim'
 alias ls='ls --color=auto --group-directories-first'
@@ -25,6 +26,9 @@ alias la='ls -A'
 alias ll='ls -Alh'
 
 eval $(dircolors ~/.dotfiles/dircolors.ansi-universal)
+
+# http://qiita.com/delphinus/items/b04752bb5b64e6cc4ea9
+export LESS='-g -i -M -R -S -W -z-4'
 
 # 補完
 source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
